@@ -1,0 +1,378 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ======================================================
+   RAKSHAK INDIA GLOBAL THEME
+   ====================================================== */
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color-scheme: light;
+
+  --toast-background: #ffffff;
+  --toast-text: #0f172a;
+  --toast-border: #e2e8f0;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --toast-background: #0f172a;
+  --toast-text: #f8fafc;
+  --toast-border: #334155;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #f8fafc;
+  color: #0f172a;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+html.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ======================================================
+   LIGHT MODE SUPPORT FOR OLD DARK PAGES
+
+   Ye rules sirf colors change karte hain.
+   Spacing, grid aur layout ko touch nahi karte.
+   ====================================================== */
+
+/* Main backgrounds */
+
+html:not(.dark) .bg-black {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .bg-slate-700 {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .bg-gray-950 {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-gray-900 {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .bg-gray-800 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Transparent dark backgrounds */
+
+html:not(.dark) [class*="bg-slate-950/"] {
+  background-color: rgb(248 250 252 / 0.94) !important;
+}
+
+html:not(.dark) [class*="bg-slate-900/"] {
+  background-color: rgb(255 255 255 / 0.94) !important;
+}
+
+html:not(.dark) [class*="bg-slate-800/"] {
+  background-color: rgb(241 245 249 / 0.94) !important;
+}
+
+/* Headings and text */
+
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-50 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html:not(.dark) .text-slate-300 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-slate-400 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-slate-500 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-gray-100 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-gray-200 {
+  color: #1e293b !important;
+}
+
+html:not(.dark) .text-gray-300 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-gray-400 {
+  color: #64748b !important;
+}
+
+/* Borders */
+
+html:not(.dark) .border-slate-900 {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .border-slate-600 {
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .border-gray-800 {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .border-gray-700 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Forms */
+
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+  border-color: #cbd5e1 !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) input:focus,
+html:not(.dark) textarea:focus,
+html:not(.dark) select:focus {
+  border-color: #2563eb !important;
+  outline: none;
+}
+
+html:not(.dark) select option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* Slate gradients used in old pages */
+
+html:not(.dark) .from-slate-950 {
+  --tw-gradient-from: #f8fafc var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(248 250 252 / 0)
+    var(--tw-gradient-to-position) !important;
+}
+
+html:not(.dark) .from-slate-900 {
+  --tw-gradient-from: #ffffff var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(255 255 255 / 0)
+    var(--tw-gradient-to-position) !important;
+}
+
+html:not(.dark) .via-slate-950 {
+  --tw-gradient-via: #f8fafc var(--tw-gradient-via-position) !important;
+}
+
+html:not(.dark) .via-slate-900 {
+  --tw-gradient-via: #ffffff var(--tw-gradient-via-position) !important;
+}
+
+html:not(.dark) .via-slate-800 {
+  --tw-gradient-via: #f1f5f9 var(--tw-gradient-via-position) !important;
+}
+
+html:not(.dark) .to-slate-950 {
+  --tw-gradient-to: #f8fafc var(--tw-gradient-to-position) !important;
+}
+
+html:not(.dark) .to-slate-900 {
+  --tw-gradient-to: #ffffff var(--tw-gradient-to-position) !important;
+}
+
+/* Hover states used in old dark pages */
+
+html:not(.dark) [class~="hover:bg-slate-800"]:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) [class~="hover:bg-slate-700"]:hover {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) [class~="hover:text-white"]:hover {
+  color: #0f172a !important;
+}
+
+/* Colored buttons must keep white text */
+
+html:not(.dark) .bg-blue-500.text-white,
+html:not(.dark) .bg-blue-600.text-white,
+html:not(.dark) .bg-blue-700.text-white,
+html:not(.dark) .bg-red-500.text-white,
+html:not(.dark) .bg-red-600.text-white,
+html:not(.dark) .bg-red-700.text-white,
+html:not(.dark) .bg-green-500.text-white,
+html:not(.dark) .bg-green-600.text-white,
+html:not(.dark) .bg-emerald-500.text-white,
+html:not(.dark) .bg-emerald-600.text-white,
+html:not(.dark) .bg-indigo-500.text-white,
+html:not(.dark) .bg-indigo-600.text-white,
+html:not(.dark) .bg-violet-500.text-white,
+html:not(.dark) .bg-violet-600.text-white {
+  color: #ffffff !important;
+}
+
+/* Colored button children/icons */
+
+html:not(.dark) .bg-blue-600,
+html:not(.dark) .bg-blue-700,
+html:not(.dark) .bg-red-600,
+html:not(.dark) .bg-red-700,
+html:not(.dark) .bg-green-600,
+html:not(.dark) .bg-emerald-600 {
+  --button-text-color: #ffffff;
+}
+
+html:not(.dark) button.bg-blue-600,
+html:not(.dark) button.bg-blue-700,
+html:not(.dark) button.bg-red-600,
+html:not(.dark) button.bg-red-700,
+html:not(.dark) button.bg-green-600,
+html:not(.dark) button.bg-emerald-600,
+html:not(.dark) a.bg-blue-600,
+html:not(.dark) a.bg-blue-700,
+html:not(.dark) a.bg-red-600,
+html:not(.dark) a.bg-red-700,
+html:not(.dark) a.bg-green-600,
+html:not(.dark) a.bg-emerald-600 {
+  color: #ffffff !important;
+}
+
+/* Cards and shadows */
+
+html:not(.dark) .shadow-black\/10,
+html:not(.dark) .shadow-black\/20,
+html:not(.dark) .shadow-black\/30 {
+  --tw-shadow-color: rgb(15 23 42 / 0.08) !important;
+}
+
+html:not(.dark) article.bg-slate-900,
+html:not(.dark) section.bg-slate-900,
+html:not(.dark) form.bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+/* Leaflet map */
+
+.leaflet-container {
+  z-index: 1;
+}
+
+html:not(.dark) .leaflet-popup-content-wrapper,
+html:not(.dark) .leaflet-popup-tip {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* Selection */
+
+::selection {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #e2e8f0;
+  border-radius: 999px;
+  background-color: #94a3b8;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background-color: #0f172a;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  border-color: #0f172a;
+  background-color: #475569;
+}
